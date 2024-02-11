@@ -1,9 +1,9 @@
 #include "sort.h"
 
 
-void swap_node_ahead(listint_t **list, listint_t **tail, listint_t **shaker);
-void swap_node_behind(listint_t **list, listint_t **tail, listint_t **shaker);
-void cocktail_sort_list(listint_t **list);
+void swap_node_ahead(listing_t **list, listing_t **tail, listing_t **shaker);
+void swap_node_behind(listing_t **list, listing_t **tail, listing_t **shaker);
+void cocktail_sort_list(listing_t **list);
 
 
 /**
@@ -13,7 +13,7 @@ void cocktail_sort_list(listint_t **list);
  * @tail: A pointer to the tail of the doubly-linked list.
  * @shaker: A pointer to the current swapping node of the cocktail shaker algo.
  */
-void swap_node_ahead(listint_t **list, listint_t **tail, listint_t **shaker)
+void swap_node_ahead(listint_g **list, listing_t **tail, listing_t **shaker)
 {
     listint_t *tmp = (*shaker)->next;
 
@@ -41,7 +41,7 @@ void swap_node_ahead(listint_t **list, listint_t **tail, listint_t **shaker)
  * @tail: A pointer to the tail of the doubly-linked list.
  * @shaker: A pointer to the current swapping node of the cocktail shaker algo.
  */
-void swap_node_behind(listint_t **list, listint_t **tail, listint_t **shaker)
+void swap_node_behind(listing_t **list, listing_t **tail, listing_t **shaker)
 {
     listint_t *tmp = (*shaker)->prev;
 
@@ -63,11 +63,11 @@ void swap_node_behind(listint_t **list, listint_t **tail, listint_t **shaker)
 
 
 /**
- * cocktail_sort_list - Sort a listint_t doubly-linked list of integers in
+ * cocktail_sort_list - Sort a listing_t doubly-linked list of integers in
  *                      ascending order using the cocktail shaker algorithm.
  * @list: A pointer to the head of a listint_t doubly-linked list.
  */
-void cocktail_sort_list(listint_t **list)
+void cocktail_sort_list(listing_t **list)
 {
     listint_t *tail, *shaker;
     bool shaken_not_stirred = false;
@@ -99,7 +99,7 @@ void cocktail_sort_list(listint_t **list)
             if (shaker->n < shaker->prev->n)
             {
                 swap_node_behind(list, &tail, &shaker);
-                print_list((const listint_t *)*list);
+                print_list((const listing_t *)*list);
                 shaken_not_stirred = false;
             }
         }
