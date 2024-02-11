@@ -28,8 +28,8 @@ typedef enum bool
 typedef struct listing_s
 {
 	const int n;
-	struct listing_s prev;
-	struct listing_s next;
+	struct listing_s *prev;
+	struct listing_s *next;
 } listing_t;
 
 /* printing helper function */
